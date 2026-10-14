@@ -1,0 +1,198 @@
+
+/* Základ stránky */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #f4f6fa;
+    color: #202938;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+body > h1,
+body > p,
+body > form,
+body > article,
+body > div {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+p {
+    color: #596579;
+}
+
+a {
+    color: #315dcc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tlačítka a formulářové prvky */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    padding: 9px 15px;
+    border: 0;
+    border-radius: 7px;
+    background: #315dcc;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2449a8;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #d6dce7;
+    border-radius: 7px;
+    background: white;
+    color: #202938;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #9bb6ff;
+    border-color: #315dcc;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Filtr a vyhledávání */
+.filters {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 18px;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    background: white;
+}
+
+.filters > div {
+    flex: 1 1 180px;
+}
+
+.filters button {
+    flex: 0 0 auto;
+}
+
+/* Karty úkolů */
+article {
+    margin-top: 16px;
+    padding: 22px;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 3px 12px rgb(25 40 70 / 4%);
+}
+
+article p {
+    margin: 8px 0;
+}
+
+article form {
+    display: inline-block;
+    margin: 12px 8px 0 0;
+}
+
+article form button {
+    font-size: 0.9rem;
+}
+
+/* Formuláře pro vytvoření a úpravu */
+.task-form {
+    display: grid;
+    gap: 18px;
+    max-width: 650px;
+    margin: 24px auto;
+    padding: 24px;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    background: white;
+}
+
+.task-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+    }
+
+    article,
+    .task-form {
+        padding: 16px;
+    }
+
+    .filters {
+        align-items: stretch;
+    }
+
+    .filters button {
+        width: 100%;
+    }
+}
+
+
+/* Úkoly po termínu */
+article.task-overdue {
+    border-left: 5px solid #dc3545;
+    background: #fff8f8;
+}
+
+.task-overdue .overdue-label {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 5px;
+    background: #fde8e8;
+    color: #b4232f;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
